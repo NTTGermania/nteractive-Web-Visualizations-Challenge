@@ -4,6 +4,7 @@ console.log("This is app.js");
 // Global variable to hold URL
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
+// function for bar graph
 function DrawBargraph(sampleId){
     console.log(`DrawBargraph(${sampleId})`);
 
@@ -42,6 +43,7 @@ function DrawBargraph(sampleId){
     });
 }
 
+// function for bubblechart
 function DrawBubblechart(sampleId){
     console.log(`DrawBublechart(${sampleId})`);
 
@@ -82,6 +84,7 @@ function DrawBubblechart(sampleId){
     });
 }
 
+// function for the demographic info box
 function ShowMetadata(sampleId){
     d3.json(url).then(data =>{
 
@@ -105,6 +108,7 @@ function ShowMetadata(sampleId){
     console.log(`ShowMetadata(${sampleId})`);
 }
 
+// optional gauge
 function DrawGauge(sampleId){
     console.log(`DrawGauge(${sampleId})`);
 }
