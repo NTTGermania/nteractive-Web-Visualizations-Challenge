@@ -83,6 +83,25 @@ function DrawBubblechart(sampleId){
 }
 
 function ShowMetadata(sampleId){
+    d3.json(url).then(data =>{
+
+        let Metadata = data.metadata;
+
+        console.log(Metadata);
+
+        let resultArray = Metadata.filter(s => s.id == sampleId);
+        let result = resultArray[0];
+
+        let demographicInfo = d3.select("#sample-metadata");
+        // Clear out the demographic info box before displaying the new info to the panel
+        demographicInfo.html("");
+
+        // Get the demographic data for the id and add the info to the panel
+        Object.entries(result).forEach(([key,value]) => {   
+        demographicInfo.append("h4").text(`${key.toUpperCase()}: ${value}`);   
+        });
+    });
+    
     console.log(`ShowMetadata(${sampleId})`);
 }
 
